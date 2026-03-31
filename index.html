@@ -4,6 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NXPAY - Learn Digital Opportunities</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', 'YOUR_PIXEL_ID'); 
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     * {
       margin: 0;
@@ -122,7 +144,6 @@
 </head>
 <body>
 
-  <!-- Logo -->
   <div class="logo">
     <img src="https://via.placeholder.com/110x110/00ffaa/000000?text=NXpay" alt="NXPAY Logo">
   </div>
@@ -132,7 +153,6 @@
     Explore mobile based digital activities and learn about online opportunities.
   </p>
 
-  <!-- Main Card -->
   <div class="card">
     <div class="menu-item">
       <span>📱</span>
@@ -160,12 +180,10 @@
     </button>
   </div>
 
-  <!-- Bottom Description -->
   <div class="bottom-text">
     Our community shares information about mobile based platforms, digital tools and general online opportunities for learning and discussion.
   </div>
 
-  <!-- Disclaimer -->
   <div class="disclaimer">
     Disclaimer: This platform is created for informational and educational purposes only. We do not guarantee income or financial results. Users should evaluate opportunities independently and make responsible decisions.
   </div>
