@@ -18,20 +18,23 @@
 
     fbq('init', 'YOUR_PIXEL_ID'); 
     fbq('track', 'PageView');
+
+    // Scroll Tracking
+    window.addEventListener('scroll', function() {
+      let scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if(scrollPercent > 50){
+        fbq('trackCustom', 'Scroll50');
+      }
+    });
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -57,6 +60,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
+      object-fit: cover;
     }
 
     h1 {
@@ -94,24 +98,17 @@
       border-bottom: 1px solid #333;
     }
 
-    .menu-item:last-child {
-      border-bottom: none;
-    }
-
-    .menu-item img {
-      width: 22px;
-      height: 22px;
-    }
+    .menu-item:last-child { border-bottom: none; }
 
     .join-btn {
+      display: inline-block;
       background: linear-gradient(90deg, #00ffaa, #00cc88);
       color: #000;
       font-weight: 700;
       font-size: 17px;
       padding: 16px 40px;
-      border: none;
       border-radius: 50px;
-      cursor: pointer;
+      text-decoration: none;
       box-shadow: 0 0 25px rgba(0, 255, 170, 0.5);
       margin: 10px 0 30px;
       transition: all 0.3s;
@@ -142,50 +139,43 @@
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Logo -->
   <div class="logo">
     <img src="logo.png" alt="BESTPAY Logo">
   </div>
 
-  <h1>NXPAY</h1>
+  <h1>BESTPAY</h1>
+
   <p class="subtitle">
     Explore mobile based digital activities and learn about online opportunities.
   </p>
 
   <div class="card">
-    <div class="menu-item">
-      <span>📱</span>
-      <span>Mobile Based Digital Activities</span>
-    </div>
-    <div class="menu-item">
-      <span>💰</span>
-      <span>Online Opportunity Discussions</span>
-    </div>
-    <div class="menu-item">
-      <span>👥</span>
-      <span>Community Learning & Tips</span>
-    </div>
-    <div class="menu-item">
-      <span>🌐</span>
-      <span>Digital Platform Insights</span>
-    </div>
-    <div class="menu-item">
-      <span>⚡</span>
-      <span>Instant Updates & Guides</span>
-    </div>
+    <div class="menu-item">📱 Mobile Based Digital Activities</div>
+    <div class="menu-item">💰 Online Opportunity Discussions</div>
+    <div class="menu-item">👥 Community Learning & Tips</div>
+    <div class="menu-item">🌐 Digital Platform Insights</div>
+    <div class="menu-item">⚡ Instant Updates & Guides</div>
 
-     <a href="https://t.me/+rlQIsxMDHm5hOTQ1" target="_blank" class="join-btn"
-       onclick="fbq('track', 'Lead')">
+    <!-- Button -->
+    <a href="https://t.me/+rlQIsxMDHm5hOTQ1" target="_blank" class="join-btn"
+       onclick="
+       fbq('track', 'Lead');
+       fbq('track', 'CompleteRegistration');
+       ">
       Join Free Learning Community
     </a>
   </div>
+
   <div class="bottom-text">
     Our community shares information about mobile based platforms, digital tools and general online opportunities for learning and discussion.
   </div>
 
   <div class="disclaimer">
-    Disclaimer: This platform is created for informational and educational purposes only. We do not guarantee income or financial results. Users should evaluate opportunities independently and make responsible decisions.
+    Disclaimer: This platform is created for informational and educational purposes only. We do not guarantee income or financial results.
   </div>
 
 </body>
